@@ -7,7 +7,7 @@ def ciclos():
     return ciclo1, ciclo2, ciclo3
 
 def lee_numero():
-    numero = '75933'
+    numero = '15436'
     return numero
 
 def da_vuelta(numero):
@@ -42,16 +42,18 @@ def ciclo_kaprekar(nume_or):
     ciclo = []
     anterior = ''
     nume_calculado = nume_or
-    while (nume_calculado not in c1) and (nume_calculado not in c2) and (nume_calculado not in c3):
+    ciclo.append(nume_or)
+    while (int(nume_calculado) not in c1) and (int(nume_calculado) not in c2) and (int(nume_calculado) not in c3):
         ciclo.append(nume_calculado)
         nume_1 = may_men(nume_calculado)
         nume_2 = men_may(nume_calculado)
         nume_1_2 = diferencia(nume_1, nume_2)
         #anterior = nume_calculado
         nume_calculado = nume_1_2
-    if nume_calculado in c1:
+    
+    if int(nume_calculado) in c1:
         constante = c1[:]
-    elif nume_calculado in c2:
+    elif int(nume_calculado) in c2:
         constante = c2[:]
     else:
         constante = c3[:]
