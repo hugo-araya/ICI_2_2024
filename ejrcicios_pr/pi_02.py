@@ -1,4 +1,4 @@
-
+import time
 import math
 
 def pi_Leibniz(fin):
@@ -37,14 +37,16 @@ def pi_Euler(fin):
     return suma
 
 if __name__ == '__main__':
-    fin = 5000
-    p_Leibniz = pi_Leibniz(fin)
-    pipi = calcula_pi(p_Leibniz, 4)
-    print("Leibniz: ", pipi)
-    p_Wallis = pi_Wallis(fin)
-    pipi = calcula_pi(p_Wallis, 2)
-    print("Wallis : ", pipi)
-    p_Euler = pi_Euler(fin)
-    pipi = calcula_pi(p_Euler, 2)
-    print("Euler  : ",pipi)
-    print("Python : ",math.pi)
+    salida = open('log.txt', 'w')
+    fin = 1000
+    while fin <= 6000:
+        print ('Generando: ', fin)
+        ini = time.time()
+        p_Euler = pi_Euler(fin)
+        out = time.time()
+        pipi = calcula_pi(p_Euler, 2)
+        salida.write(str(fin)+' : '+ str(out-ini)+'\n')
+        fin = fin + 500
+    salida.close()
+    
+
