@@ -50,12 +50,12 @@ def ciclo_kaprekar(nume_or):
         #anterior = nume_calculado
         nume_calculado = nume_1_2
     if nume_calculado in c1:
-        ciclo = c1[:]
+        constante = c1[:]
     elif nume_calculado in c2:
-        ciclo = c2[:]
+        constante = c2[:]
     else:
-        ciclo = c3[:]
-    return nume_calculado, ciclo
+        constante = c3[:]
+    return constante, ciclo
 
 def mostrar_constante(constante, ciclo):
     print(constante,'-', ciclo)
