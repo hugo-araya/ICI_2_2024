@@ -38,15 +38,15 @@ def pi_Euler(fin):
 
 if __name__ == '__main__':
     salida = open('log.txt', 'w')
-    fin = 1000
-    while fin <= 6000:
+    fin = 100
+    while fin < 2500:
         print ('Generando: ', fin)
         ini = time.time()
         p_Euler = pi_Euler(fin)
         out = time.time()
         pipi = calcula_pi(p_Euler, 2)
-        salida.write(str(fin)+' : '+ str(out-ini)+'\n')
-        fin = fin + 500
+        salida.write(str(fin)+';'+ str(out-ini)+'\n')
+        fin = fin + 100
     salida.close()
     
 
